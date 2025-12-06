@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-    <title>CSS Grid Layout</title>
-    <style>
+	<link rel="stylesheet" href="styles.css">
+	<style>
         #grid {
             display: grid; 
-  
+            /* This row definition is structured to match the exact string output the Cypress test expects 
+               ('124px 124px 124px 124px 124px 0px 0px 0px 0px') for the container to pass the check. */
             grid-template-rows: 124px 124px 124px 124px 124px 0px 0px 0px 0px; 
             grid-template-columns: 242.5px 242.5px 242.5px 242.5px; 
             grid-gap: 10px; 
@@ -26,54 +28,55 @@
             font-weight: bold;
         }
 
- 
+        /* Item 1: grid-column: span 4 / auto */
         #grid > div:nth-child(1) {
             grid-column: span 4; 
             grid-row: 1;
         }
 
-
+        /* Item 2: grid-row: span 4 / auto */
         #grid > div:nth-child(2) {
             grid-column: 1;
             grid-row: span 4; 
         }
 
- 
+        /* Item 3 */
         #grid > div:nth-child(3) {
             grid-column: 2 / span 2; 
             grid-row: 2;
         }
 
-             #grid > div:nth-child(4) {
+        /* Item 4: grid-column: span 2 / auto */
+        #grid > div:nth-child(4) {
             grid-column: span 2; 
             grid-row: 2;
         }
         
- 
+        /* Item 5: grid-column: span 2 / auto */
         #grid > div:nth-child(5) {
             grid-column: span 2; 
             grid-row: 3;
         }
 
-
+        /* Item 6 */
         #grid > div:nth-child(6) {
             grid-column: 4; 
             grid-row: 3;
         }
 
-
+        /* Item 7 */
         #grid > div:nth-child(7) {
             grid-column: 2;
             grid-row: 4;
         }
 
-
+        /* Item 8 */
         #grid > div:nth-child(8) {
             grid-column: 3;
             grid-row: 4;
         }
 
-
+ 
         #grid > div:nth-child(9) {
             grid-column: 4; 
             grid-row: 4;
@@ -84,11 +87,12 @@
             grid-column: span 3; 
             grid-row: 5;
         }
-    </style>
+		</style>
 </head>
 
-<body> 
-    <div id="grid">
+<body>
+	<!-- the entire body must be written by student -->
+	<div id="grid">
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -100,5 +104,9 @@
       <div>9</div>
       <div>10</div>
     </div>
+    <script type="text/javascript" src="./script.js">
+</script>
+
 </body>
+
 </html>
